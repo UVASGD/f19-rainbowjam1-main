@@ -123,7 +123,7 @@ public class PlayerBody : MonoBehaviour
         if (Mathf.Abs(rb.velocity.x) > max_speed)
             rb.velocity = new Vector2(max_speed * Mathf.Sign(rb.velocity.x), rb.velocity.y);
 
-        anim.SetFloat(speed_hash, Mathf.Min(move, Mathf.Abs(rb.velocity.x)));
+        anim.SetFloat(speed_hash, Mathf.Min(Mathf.Abs(move), Mathf.Abs(rb.velocity.x)));
 
         bool flipSprite = ((spriteRenderer.flipX ? (rb.velocity.x > 1f) : (rb.velocity.x < -1f)) && Mathf.Abs(move)>0);
         if (flipSprite)
