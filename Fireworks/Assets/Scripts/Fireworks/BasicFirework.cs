@@ -14,6 +14,7 @@ public class BasicFirework : MonoBehaviour
     Animator anim;
     int explode_hash;
     Fuse fuse;
+    public GameEvent ExplodeEvent;
 
     public GameObject explosion_fx;
 
@@ -35,6 +36,7 @@ public class BasicFirework : MonoBehaviour
 
     public void Explode()
     {
+        ExplodeEvent?.Invoke();
         if (explosion_fx)
             Instantiate(explosion_fx, explosion_point.position, Quaternion.identity);
         rb.velocity = rb.velocity / explode_factor;
