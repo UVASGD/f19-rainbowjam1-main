@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TransitionMountains : MonoBehaviour
 {
+	public static TransitionMountains instance;
+
     List<SpriteRenderer> mountains;
     public float t;
     float secondsToMidnight;
@@ -16,6 +18,13 @@ public class TransitionMountains : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		if (instance) {
+			Destroy(instance);
+		} else {
+			instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
+
         numTransitions = transitions.Length;
         mountains = new List<SpriteRenderer>();
         int i = 0;
