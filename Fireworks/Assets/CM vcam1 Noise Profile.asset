@@ -49,4 +49,40 @@ MonoBehaviour:
       Frequency: 58.55
       Amplitude: 0.017
       Constant: 1
-  OrientationNoise: []
+  OrientationNoise:
+  - X:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0
+    Y:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0
+    Z:
+      Frequency: 2.38
+      Amplitude: 0.5
+      Constant: 1
+  - X:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0
+    Y:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0
+    Z:
+      Frequency: 10.52
+      Amplitude: 0.25
+      Constant: 1
+  - X:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0
+    Y:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0
+    Z:
+      Frequency: 63.76
+      Amplitude: 0.125
+      Constant: 1
