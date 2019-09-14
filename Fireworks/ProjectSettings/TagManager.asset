@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - MainBody
+  - Metaball_liquid
   layers:
   - Default
   - TransparentFX
@@ -14,8 +15,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - PlayerIgnore
+  - Player
   - 
   - 
   - 

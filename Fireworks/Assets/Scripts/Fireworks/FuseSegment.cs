@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class FuseSegment : MonoBehaviour
 {
-    public GameEvent FuseSegmentCollideEvent, FuseSegmentFinishEvent;
+    public GameEvent FuseSegmentFinishEvent;
     public float burnout_time = 2f;
-    CapsuleCollider2D coll;
+    CapsuleCollider2D coll, trig;
 
 
     // Start is called before the first frame update
     void Awake()
     {
-        coll = GetComponent<CapsuleCollider2D>();
+        foreach (CapsuleCollider2D c in GetComponents<CapsuleCollider2D>())
+        {
+            if (!c.isTrigger) coll = c;
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
-            FuseSegmentCollideEvent?.Invoke();
+        {
+            Physics2D.IgnoreCollision(collision.collider, coll);
+        }
     }
 
     public void Light(Transform light)
