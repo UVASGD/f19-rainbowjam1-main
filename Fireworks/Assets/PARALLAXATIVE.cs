@@ -9,7 +9,7 @@ public class PARALLAXATIVE : MonoBehaviour {
 
     void Start () {
         origin = transform.position;
-        positionMultiplier = (origin.z + 1f);
+        positionMultiplier = 1f - 1f / (origin.z + 1f);
         cam = Camera.main.transform;
     }
 
