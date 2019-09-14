@@ -32,6 +32,11 @@ public class FuseGrabber : MonoBehaviour
                 grabbed_segment.GetComponent<FuseSegment>().FuseSegmentFinishEvent += Detach;
             }
         }
+        else if (Input.GetButtonDown("Jump") && pb.can_input)
+        {
+            if (grabbed_segment)
+                Detach();
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

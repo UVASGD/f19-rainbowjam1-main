@@ -30,10 +30,7 @@ public class BasicFirework : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.isKinematic = true;
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
-        end = transform.Find("end");
-        dir = (end.position - transform.position).normalized;
-        transform.parent.up = dir;
-        rb.velocity = dir * speed;
+        rb.velocity = transform.up * speed;
     }
 
     public void Explode()
