@@ -9,9 +9,11 @@ public class ParallaxAutoScaler : MonoBehaviour
     void Awake()
     {
         List<PARALLAXATIVE> p = new List<PARALLAXATIVE>(GetComponentsInChildren<PARALLAXATIVE>());
-        for (int i = 1; i <= p.Count; i++)
+        for (int i = 0; i < p.Count; i++)
         {
-            p[i].transform.localScale = new Vector3(p[i].transform.localScale.x, p[i].transform.localScale.y, i*scale);
+            p[i].transform.localPosition = new Vector3(p[i].transform.localPosition.x, p[i].transform.localPosition.y, (i+1)*scale);
         }
+
+
     }
 }
