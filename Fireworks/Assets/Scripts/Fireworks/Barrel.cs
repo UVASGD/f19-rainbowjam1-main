@@ -38,15 +38,21 @@ public class Barrel : MonoBehaviour
     {
         if (firework && firework_count <= firework_limit)
         {
+            anim.SetTrigger(shoot_hash);
             shoot_timer = shoot_cooldown;
-            BasicFirework f = Instantiate(firework, 
-                shoot_point.position, Quaternion.identity).
-                GetAnyComponent<BasicFirework>(in_parent: false);
-            f.transform.up = transform.up;
             firework_count++;
-            if (firework_speed != -1) f.speed = firework_speed; 
-            f.ExplodeEvent += delegate { firework_count--; Shoot(); };
+            Invoke("ShootFirework", 0.5f);
         }
+    }
+
+    void ShootFirework()
+    {
+        BasicFirework f = Instantiate(firework,
+    shoot_point.position, Quaternion.identity).
+    GetAnyComponent<BasicFirework>(in_parent: false);
+        f.transform.up = transform.up;
+        if (firework_speed != -1) f.speed = firework_speed;
+        f.ExplodeEvent += delegate { firework_count--; };
     }
 
     void CheckCooldown(ref float timer)

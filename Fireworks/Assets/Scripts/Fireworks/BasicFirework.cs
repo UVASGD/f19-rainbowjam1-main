@@ -15,6 +15,7 @@ public class BasicFirework : MonoBehaviour
     int explode_hash;
     Fuse fuse;
     public GameEvent ExplodeEvent;
+    Vector2 velocity;
 
     public GameObject explosion_fx;
 
@@ -43,7 +44,7 @@ public class BasicFirework : MonoBehaviour
         if (anim)
         {
             anim.SetTrigger(explode_hash);
-            Destroy(transform.parent.gameObject, anim.GetCurrentAnimatorClipInfo(0).Length);
+            Destroy(transform.parent.gameObject, anim.GetCurrentAnimatorStateInfo(0).length);
         }
         else
             Destroy(transform.parent.gameObject);

@@ -5030,8 +5030,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5724411400967956513}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.06, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 5724411402510952280}
   - {fileID: 5724411401842663834}
@@ -5062,7 +5062,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.45, y: 1.2}
   m_EdgeRadius: 0
 --- !u!114 &5724411400967956516
 MonoBehaviour:
@@ -5187,8 +5187,8 @@ LineRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -973139121
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Positions:
   - {x: -0.01, y: -0.85, z: 0}
@@ -5252,8 +5252,8 @@ LineRenderer:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 0
-    numCapVertices: 0
+    numCornerVertices: 16
+    numCapVertices: 16
     alignment: 0
     textureMode: 0
     shadowBias: 0.5
@@ -5347,7 +5347,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: -1.417499}
+  m_ConnectedAnchor: {x: 0, y: -0.73874944}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -5441,7 +5441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5724411401764255107}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -0.85, z: 0}
+  m_LocalPosition: {x: -0.03, y: -0.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5724411401012401640}
@@ -5503,7 +5503,7 @@ Transform:
   m_GameObject: {fileID: 5724411402510952231}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5724411400967956514}
   m_RootOrder: 0
@@ -5543,10 +5543,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 59a46921c0d14124b8083cf9f09e3566, type: 3}
+  m_SortingLayerID: -973139121
+  m_SortingLayer: 1
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: d0732ba0957e5ea47b0aba82dde87f36, type: 3}
   m_Color: {r: 0.5566038, g: 0.13389996, b: 0.13389996, a: 1}
   m_FlipX: 0
   m_FlipY: 0
