@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (activated)
+        if (activated && pb.can_input)
         {
             float move = Input.GetAxis("Horizontal");
             bool jump = Input.GetButtonDown("Jump");

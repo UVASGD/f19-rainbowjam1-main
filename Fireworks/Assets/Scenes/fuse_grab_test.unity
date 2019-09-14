@@ -263,12 +263,12 @@ PrefabInstance:
     - target: {fileID: 5724411401615311575, guid: 891048f1f9a11f545a69510a70118a3d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -14.71
       objectReference: {fileID: 0}
     - target: {fileID: 5724411401615311575, guid: 891048f1f9a11f545a69510a70118a3d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: 5724411401615311575, guid: 891048f1f9a11f545a69510a70118a3d,
         type: 3}
@@ -314,6 +314,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724411400870370348, guid: 891048f1f9a11f545a69510a70118a3d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724411400870370348, guid: 891048f1f9a11f545a69510a70118a3d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 891048f1f9a11f545a69510a70118a3d, type: 3}
@@ -739,6 +749,42 @@ Transform:
   m_Father: {fileID: 421162600}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1828335270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4523582738202332333, guid: 2f883415ea3d61f478953e6c17d6bdc3,
+    type: 3}
+  m_PrefabInstance: {fileID: 4891844123824702988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1828335271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828335270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95493ffce7144a4b86461482639d031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!255 &1828335272
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828335270}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_DampingRatio: 0
+  m_Frequency: 0
 --- !u!1001 &4891844123824702988
 PrefabInstance:
   m_ObjectHideFlags: 0
