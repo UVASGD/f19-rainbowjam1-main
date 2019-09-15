@@ -6,7 +6,7 @@ public class PlayerBody : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
-    float movement_speed = 5f, max_speed = 5f;
+    float movement_speed = 8f, max_speed = 20f;
     float move;
     bool jump, hurt, holdJump;
 
@@ -14,10 +14,10 @@ public class PlayerBody : MonoBehaviour
 	int grounded = 1;
 	int jumps_left = 1;
 	int max_jumps = 0;
-    float jump_cooldown = 0.1f, jump_timer, jump_force = 20f, wall_force = 12f,
+    float jump_cooldown = 0.1f, jump_timer, jump_force = 15f, wall_force = 12f,
         move_cooldown = 0.5f, move_timer;
     float jump_multiplier = 4f;
-    float fall_multiplier = 4.5f;
+    float fall_multiplier = 4f;
 
     Animator anim;
     int jump_hash, speed_hash, wall_hash, air_hash, hurt_hash;
@@ -102,6 +102,7 @@ public class PlayerBody : MonoBehaviour
 
     private void FixedUpdate()
     {
+        /*
 		if (rb.velocity.y > 0f && !holdJump) {
 			print("!!!");
 			rb.gravityScale = 4.5f;
@@ -109,14 +110,17 @@ public class PlayerBody : MonoBehaviour
 			rb.gravityScale = 2f;
 		} else {
 			rb.gravityScale = 1f;
-		}
+		}*/
 
         if (l_wall_checker.grounded == 0 && r_wall_checker.grounded == 0)
         {
 			if (rb.velocity.y < 0f)
 				rb.velocity += Vector2.up * Physics.gravity.y * (fall_multiplier - 1f) * Time.fixedDeltaTime;
-			if (rb.velocity.y > 0f)
-				rb.velocity += Vector2.up * Physics.gravity.y * (jump_multiplier - 1f) * Time.fixedDeltaTime;
+            if (rb.velocity.y > 0f)
+            {
+                float real_mult = (holdJump) ? jump_multiplier /2f : jump_multiplier;
+                rb.velocity += Vector2.up * Physics.gravity.y * (real_mult - 1f) * Time.fixedDeltaTime;
+            }
         }
 
         anim.SetBool(hurt_hash, hurt);
