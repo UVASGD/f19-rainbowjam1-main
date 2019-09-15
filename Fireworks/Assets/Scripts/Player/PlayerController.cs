@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour
         {
             float move = Input.GetAxis("Horizontal");
             bool jump = Input.GetButtonDown("Jump");
-            pb.HandleInput(move, jump);
+			bool holdJump = Input.GetButton("Jump");
+            pb.HandleInput(move, jump, holdJump);
         }
     }
 }

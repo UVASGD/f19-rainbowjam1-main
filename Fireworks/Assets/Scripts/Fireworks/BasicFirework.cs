@@ -33,6 +33,7 @@ public class BasicFirework : MonoBehaviour
         rb.isKinematic = true;
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         rb.velocity = transform.up * speed;
+		print("VEL: " + rb.velocity.magnitude);
     }
 
     public void Explode()

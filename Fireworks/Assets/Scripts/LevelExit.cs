@@ -32,7 +32,7 @@ public class LevelExit : MonoBehaviour
 
     void Update () {
         if (movePlayer && playerBody) {
-            playerBody.HandleInput(1f, false);
+            playerBody.HandleInput(1f, false, false);
         }
     }
 
