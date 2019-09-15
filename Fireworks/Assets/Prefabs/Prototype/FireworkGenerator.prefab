@@ -254,6 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098d7f81506f3274387995f9624d38ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fuse_fx: {fileID: 0}
 --- !u!120 &9086367318778784296
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -350,8 +351,8 @@ LineRenderer:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 0
-    numCapVertices: 0
+    numCornerVertices: 16
+    numCapVertices: 16
     alignment: 0
     textureMode: 0
     shadowBias: 0.5

@@ -14,6 +14,8 @@ public class BasicFirework : MonoBehaviour
     Animator anim;
     int explode_hash;
     Fuse fuse;
+    public GameEvent ExplodeEvent;
+    Vector2 velocity;
 
     public GameObject explosion_fx;
 
@@ -30,21 +32,19 @@ public class BasicFirework : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.isKinematic = true;
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
-        end = transform.Find("end");
-        dir = (end.position - transform.position).normalized;
-        transform.parent.up = dir;
-        rb.velocity = dir * speed;
+        rb.velocity = transform.up * speed;
     }
 
     public void Explode()
     {
+        ExplodeEvent?.Invoke();
         if (explosion_fx)
             Instantiate(explosion_fx, explosion_point.position, Quaternion.identity);
         rb.velocity = rb.velocity / explode_factor;
         if (anim)
         {
             anim.SetTrigger(explode_hash);
-            Destroy(transform.parent.gameObject, anim.GetCurrentAnimatorClipInfo(0).Length);
+            Destroy(transform.parent.gameObject, anim.GetCurrentAnimatorStateInfo(0).length);
         }
         else
             Destroy(transform.parent.gameObject);

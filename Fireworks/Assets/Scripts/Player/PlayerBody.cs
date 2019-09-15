@@ -20,6 +20,8 @@ public class PlayerBody : MonoBehaviour
     Animator anim;
     int jump_hash, speed_hash, wall_hash, air_hash, hurt_hash;
 
+    [HideInInspector] public bool can_input = true;
+
     // Start is called before the first frame update
     void Start()
     {
