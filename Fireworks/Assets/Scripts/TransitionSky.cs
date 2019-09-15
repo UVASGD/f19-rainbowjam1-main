@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TransitionSky : MonoBehaviour
 {
+	public static TransitionSky instance;
+
     public float t = 0f;
     public float secondsToMidnight = 60f;
     List<SpriteRenderer> skies;
@@ -15,6 +17,12 @@ public class TransitionSky : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+		if (instance) {
+			Destroy(gameObject);
+		} else {
+			instance = this;
+		}
+
         skies = new List<SpriteRenderer>();
         int i = 0;
         foreach (Transform child in transform) {
@@ -28,7 +36,7 @@ public class TransitionSky : MonoBehaviour
     }
 
     public void TriggerTransition () {
-        targetInterval += interval;
+        targetInterval += interval * 4f;
     }
 
     // Update is called once per frame

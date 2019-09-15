@@ -41,7 +41,7 @@ public class TransitionMountains : MonoBehaviour
     }
 
     public void TriggerTransition () {
-        targetInterval += interval;
+        targetInterval += interval * 4f;
     }
 
     // Update is called once per frame

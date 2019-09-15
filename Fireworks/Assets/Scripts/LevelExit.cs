@@ -51,14 +51,17 @@ public class LevelExit : MonoBehaviour
         print("INDEX: " + currentIndex);
         print("Scene Count: " + SceneManager.sceneCountInBuildSettings);
         print("To load: " + (currentIndex+1)%SceneManager.sceneCountInBuildSettings);
-        yield return new WaitForSeconds(2.5f);
-        Destroy(playerBody.gameObject);
+        yield return new WaitForSeconds(2f);
+		TransitionMountains.instance.TriggerTransition();
+		TransitionSky.instance.TriggerTransition();
+		Destroy(playerBody.gameObject);
 		SceneManager.LoadScene((currentIndex + 1) % SceneManager.sceneCountInBuildSettings, LoadSceneMode.Additive);
-		yield return new WaitForSeconds(2.5f);
+		yield return new WaitForSeconds(3f);
 		print("Follow: " + cam.Follow.name);
 		CinemachineFramingTransposer transposer = cam.GetCinemachineComponent<CinemachineFramingTransposer>();
 		bool og_softZone = transposer.m_UnlimitedSoftZone;
 		transposer.m_UnlimitedSoftZone = true;
+		transposer.m_LookaheadTime /= 10f;
 		transposer.m_XDamping *= 2;
 		transposer.m_YDamping *= 2;
 		transposer.m_ZDamping *= 2;
@@ -68,6 +71,7 @@ public class LevelExit : MonoBehaviour
 		yield return new WaitForSeconds(5f);
 		GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().activated = true;
 		transposer.m_UnlimitedSoftZone = og_softZone;
+		transposer.m_LookaheadTime *= 10f;
 		transposer.m_XDamping /= 2;
 		transposer.m_YDamping /= 2;
 		transposer.m_ZDamping /= 2;
