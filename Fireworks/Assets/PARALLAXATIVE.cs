@@ -16,7 +16,7 @@ public class PARALLAXATIVE : MonoBehaviour {
         cam = Camera.main.transform;
     }
 
-    void FixedUpdate () {
+    void Update () {
         target = (Vector3)((Vector2)origin + (Vector2)cam.position * positionMultiplier) + Vector3.forward * origin.z;
         transform.position = Vector3.SmoothDamp(transform.position, target, ref velRef, 0.01f);
     }

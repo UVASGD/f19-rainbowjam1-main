@@ -6,7 +6,7 @@ public class PlayerBody : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
-    float movement_speed = 20f, max_speed = 20f;
+    float movement_speed = 5f, max_speed = 5f;
     float move;
     bool jump, hurt;
 
